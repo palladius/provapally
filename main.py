@@ -10,6 +10,8 @@ import webapp2
 import jinja2
 import os
 
+VERSION = '0.0.5'
+
 #class MainHandler(webapp2.RequestHandler):
 #    def get(self):
 #        self.response.out.write('Hello world (Riccardo @ Provapally)!')
@@ -23,7 +25,10 @@ class MainPage(webapp.RequestHandler):
         names = ['Ricc', 'Alessandro' ,  user.nickname() ]
       else:
         names = ['Ricc', 'Alessandro' , 'No user' ]
-      template_data = { 'names': names }
+      template_data = {
+        'names': names,
+        'version': VERSION,
+      }
       #if user:
       #    self.response.headers['Content-Type'] = 'text/plain'
       #    self.response.out.write('[ProvaPally Obsolete]: Groezi Mittenand, liebe gaeste' + user.nickname())
@@ -33,6 +38,9 @@ class MainPage(webapp.RequestHandler):
       template = jinja_environment.get_template('index.html')
       self.response.write(template.render(template_data))
 
-app = webapp.WSGIApplication( [('/', MainPage)], debug=True )
+app = webapp.WSGIApplication( [
+   ('/', MainPage),
+   #('/projects', MainPage),
+  ], debug=True )
 
 #app.response.write(template.render())
