@@ -12,3 +12,5 @@ deploy-locally:
 deploy-openid-palladius:
 	echo Deploying to a different app_id from specified on YAML which I configured for OpenId:
 	appcfg.py -R --oauth2  update -A s~openid-palladius .
+logs:
+	appcfg.py --oauth2 request_logs --application provapally --version v0-0-003 var/logs/logs-`data`.txt
