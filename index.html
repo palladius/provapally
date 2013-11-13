@@ -1,13 +1,24 @@
 <html>
   <body>
-	<h1>ProvaPally on AppEngine</h1>
-    Hello, world from jinja! v.{{version}}
+
+    [
+      <a href='/'>Home</a> |
+      <a href='/todos/'>Todos</a> 
+    ]
+
+	<h1>{{appname}} - {{page}}</h1>
+    Hello, world from jinja!
     <p>
-    <i>Lets try to put a variable: <b>%user.nickname() %</b></i>
+      <i>User: '<b>{{user}}</b>'.</i>
     </p>
     <p>
-    AppId: TODO (should be either provapally or openid-palladius). Two apps
-    deployed with the same code:
+      AppId: <b>{{appid}}</b>.
+    </p>
+    <p>
+      Names: <b>{{names}}</b>.
+    </p>
+    
+    Two apps deployed with the same code:
     <a href='http://openid-palladius.appspot.com/' >http://openid-palladius.appspot.com/</a>
     and
     <a href='http://provapally.appspot.com/' >http://provapally.appspot.com/</a>
@@ -16,7 +27,7 @@
 
 <div class='footer'>
 	<center><small>
-		Developed by Riccardo Carlesso. See code on <a href='https://github.com/palladius/provapally' >github</a>
+		{{appname}} v{{version}}, developed by Riccardo Carlesso. See code on <a href='https://github.com/palladius/provapally' >github</a>
 	</small></center>
 </div>
 </html>

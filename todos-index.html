@@ -1,0 +1,32 @@
+<html>
+  <body>
+
+    [
+      <a href='/'>Home</a> |
+      <a href='/todos/'>Todos</a> 
+    ]
+
+    <h1>Todos List</h1>
+    <p>
+      <i>User: '<b>{{user}}</b>'.</i>
+    </p>
+    <p>
+      AppId: <b>{{appid}}</b>.
+    </p>
+    <p>
+      Names: <b>{{names}}</b>.
+    </p>
+    
+    <h1>TODOs</h1>
+{% for t in todos%}
+    - {{t}} <br/>
+{% endfor %}
+
+<div class='footer'>
+    <center><small>
+        {{appname}} v{{version}}, developed by Riccardo Carlesso. See code on <a href='https://github.com/palladius/provapally' >github</a>
+    </small></center>
+</div>
+
+</body>
+</html>
